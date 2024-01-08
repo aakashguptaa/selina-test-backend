@@ -1,0 +1,5 @@
+{
+  "locationCollection":"locations",
+  "roomCollection":"rooms",
+  "roomBookingCollection":"rooms_booking"
+}
