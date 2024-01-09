@@ -1,8 +1,8 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { RoomService } from '../services/room.service';
-import { SelinaLocation } from 'src/models/location';
 import { BodyBookRoom, BodyRoomAvailability } from '../dto/room-dto';
 import { uuid } from 'uuidv4';
+import { SelinaRoom } from 'src/models/room';
 
 @Controller('rooms')
 export class RoomController {
@@ -11,7 +11,7 @@ export class RoomController {
   @Post('/check-room-availability')
   checkRoomAvailability(
     @Body() input: BodyRoomAvailability,
-  ): Promise<Array<SelinaLocation>> {
+  ): Promise<Array<SelinaRoom>> {
     return this.roomService.checkAvailability(input);
   }
 
